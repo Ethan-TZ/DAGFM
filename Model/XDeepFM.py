@@ -39,7 +39,7 @@ class XDeepFM(BasicModel):
             p.append(torch.sum(x , dim=-1))
         p = torch.cat(p , dim=-1)
         cin = p @ self.linear
-        self.logits = cin + dnn
+        self.logits = cin + dnn + self.one_order(sparse_input)
         self.output = torch.sigmoid(self.logits)
         return self.output
 

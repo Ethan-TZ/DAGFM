@@ -20,7 +20,7 @@ class FM(BasicModel):
 class FwFM(BasicModel):
     def __init__(self, config):
         super().__init__(config)
-        #self.one_order = LR(config)
+        self.one_order = LR(config)
         res = np.arange(len(config.feature_stastic) - 1)
         self.index = []
         for i in range(len(config.feature_stastic) - 2):
@@ -32,7 +32,7 @@ class FwFM(BasicModel):
         fwfm = (dense_input[:,:,None,:] * dense_input[:,None,:,:]).reshape(
             dense_input.shape[0] , dense_input.shape[1] ** 2 , dense_input.shape[2]
         )[:,self.index,:] * self.field_weight[None,:,None]
-        self.logits = torch.sum(fwfm , dim=(1,2))[:,None] #+ self.one_order(sparse_input)
+        self.logits = torch.sum(fwfm , dim=(1,2))[:,None] + self.one_order(sparse_input)
         self.output = torch.sigmoid(self.logits)
         return self.output
 
@@ -52,7 +52,7 @@ class FmFM(BasicModel):
     def FeatureInteraction(self, dense_input, sparse_input):
         dense_input = dense_input.reshape(dense_input.shape[0],dense_input.shape[1] * dense_input.shape[2])
         fmfm = dense_input @ (self.field_weight * self.mask) * dense_input
-        self.logits = torch.sum(fmfm ,dim=1 , keepdim=True) #+ self.one_order(sparse_input)
+        self.logits = torch.sum(fmfm ,dim=1 , keepdim=True) + self.one_order(sparse_input)
         self.output = torch.sigmoid(self.logits)
         return self.output
 
