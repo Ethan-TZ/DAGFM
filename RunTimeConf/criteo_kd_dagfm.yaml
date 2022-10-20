@@ -1,4 +1,4 @@
-dataset: 'Movie'
+dataset: 'Criteo'
 batch_size: 1024
 split: ['0.8','0.1','0.1']
 early_stop: 10
@@ -10,8 +10,8 @@ model: 'KD_DAGFM'
 phase: 'teacher_training'
 type: 'outer'
 embedding_size: 16
-lr: 0.003
-L2: 1e-6
+lr: 1e-4             
+L2: 1e-5
 t_depth: 3
 depth: 3
 alpha: 0.1
