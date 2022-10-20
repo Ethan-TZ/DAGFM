@@ -1,0 +1,7 @@
+feature_defaults : [[0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0],
+                                 [0], [0], [0], [0], [0], [0], [0]]
+feature_stastic: {'label': 2,'weekday': 7, 'hour': 24, 'C1': 7, 'banner_pos': 7, 'site_id': 3563, 'site_domain': 4324, 'site_category': 24, 'app_id': 5065, 'app_domain': 306, 'app_category': 30, 'device_id': 278181, 'device_ip': 1242891, 'device_model': 6591, 'device_type': 5, 'device_conn_type': 4, 'C14': 2482, 'C15': 8, 'C16': 9, 'C17': 430, 'C18': 4, 'C19': 67, 'C20': 168, 'C21': 60}
+item_field: "site_id"
+user_field: "app_id"
+user_attribute: ["age","gender","occpation","zip_code"]
+item_attribute: ["release_year"]

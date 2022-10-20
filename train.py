@@ -1,6 +1,3 @@
-import os
-import sys
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import torch
 from torch import nn
 from Utils import Config

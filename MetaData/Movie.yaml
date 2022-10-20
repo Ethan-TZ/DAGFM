@@ -1,0 +1,7 @@
+feature_defaults : [[0], [0], [0], [0], [0], [0], [0], [0], [0], ['x'], [0], ['x']]
+load_feature_stastic: ['user_id', 'item_id', 'label', 'weekday', 'hour', 'age', 'gender', 'occupation','zip_code', 'movie_title', 'release_year', 'genre']
+feature_stastic: {"label": 2,"user_id": 6041, "age": 8, "gender": 3, "occupation": 22, "zip_code": 3440, "item_id": 3884, "release_year": 82}
+item_field: "item_id"
+user_field: "user_id"
+user_attribute: ["age","gender","occpation","zip_code"]
+item_attribute: ["release_year"]
