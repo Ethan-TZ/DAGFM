@@ -10,7 +10,7 @@ class BasicModel(nn.Module):
         super().__init__()
         self.device = device
         self.L2_weight = config.L2
-        self.embedding_layer = Embedding(config)
+        self.embedding_layer = Embedding(config, device)
         self.loss_fn = nn.BCELoss()
         self.backbone = []
 

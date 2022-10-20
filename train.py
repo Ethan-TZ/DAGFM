@@ -15,7 +15,6 @@ class Trainer():
         config = Config()
         self.ID = config.config_files.split('.')[0]
         self.logger = Logger(config)
-        self.interval = config.interval
         self.dataset = Dataset(config)
         self.savedpath = config.savedpath
         self.model = eval(f"{config.model}")(config).cuda()
