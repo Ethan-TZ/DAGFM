@@ -76,7 +76,7 @@ with open('./ml-1m.inter','r') as f:
     col.extend(['weekday','hour'])
     col.extend(col_user)
     col.extend(col_item)
-    output.write(','.join(col) + '\n')
+    #output.write(','.join(col) + '\n')
     for raw_line in text:
         valid = True
         raw_line = raw_line.strip('\n')

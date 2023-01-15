@@ -11,7 +11,7 @@ phase: 'teacher_training'
 type: 'outer'
 embedding_size: 16
 lr: 0.003
-L2: 1e-6
+L2: 0.000001
 t_depth: 3
 depth: 3
 alpha: 0.1

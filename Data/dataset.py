@@ -55,9 +55,11 @@ class Dataset():
             data = tf.io.decode_csv(record , feature_default)
             feature = dict( zip(feature_name , data) )
             label = feature.pop('label')
+            for ft in ['weekday', 'hour', 'movie_title', 'genre']:
+                feature.pop(ft)
             return feature , label
         
-        dataset = dataset.map(lambda line : decoding(line , config.feature_stastic.keys() , config.feature_default) , num_parallel_calls = 10).batch(config.batch_size)
+        dataset = dataset.map(lambda line : decoding(line , config.feature_stastic.keys() if 'Movie' not in filename else ['user_id', 'item_id', 'label', 'weekday', 'hour', 'age', 'gender', 'occupation','zip_code', 'movie_title', 'release_year', 'genre'] , config.feature_default) , num_parallel_calls = 10).batch(config.batch_size)
         
         Data = []
         for data in tqdm(dataset.as_numpy_iterator()):
