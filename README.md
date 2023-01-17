@@ -45,7 +45,7 @@ python train.py --config_files=[dataset]_kd_dagfm.yaml --phase=teacher_training
 ### Distillation
 
 ```
-python train.py --config_files=[dataset]_kd_dagfm.yaml --phase=teacher_training --warm_up=/Saved/[teacher_file]
+python train.py --config_files=[dataset]_kd_dagfm.yaml --phase=distillation --warm_up=/Saved/[teacher_file]
 ```
 
 ### Finetuning
