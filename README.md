@@ -56,3 +56,16 @@ python train.py --config_files=[dataset]_kd_dagfm.yaml --phase=finetuning --warm
 
 ## Maintainers
 Zhen Tian. If you have any questions, please contact 1204216974@qq.com.
+
+## Cite
+If you find DAGFM useful for your research or development, please cite the following papers: [DAGFM](https://dl.acm.org/doi/10.1145/3539597.3570384).
+
+```bibtex
+@inproceedings{tian2023directed,
+  title={Directed Acyclic Graph Factorization Machines for CTR Prediction via Knowledge Distillation},
+  author={Tian, Zhen and Bai, Ting and Zhang, Zibin and Xu, Zhiyuan and Lin, Kangyi and Wen, Ji-Rong and Zhao, Wayne Xin},
+  booktitle={Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining},
+  pages={715--723},
+  year={2023}
+}
+```
